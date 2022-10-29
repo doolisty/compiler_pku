@@ -60,14 +60,14 @@ FuncType
 Block
     : '{' Stmt '}' {
         auto stmt = unique_ptr<string>($2);
-        $$ = new string("{" + *stmt + "}");
+        $$ = new string("{ " + *stmt + " }");
     }
     ;
 
 Stmt
     : RETURN Number ';' {
         auto number = unique_ptr<string>($2);
-        $$ = new string("return" + *number + ";");
+        $$ = new string("return " + *number + ";");
     }
     ;
 
